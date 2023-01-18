@@ -1,0 +1,31 @@
+body {
+  background-color: var(--bgc);
+}
+
+.site-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bgc);
+}
+
+.container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  align-items: center;
+  justify-content: space-between;
+}
+.header {
+  width: 100vw;
+  height: var(--height-unit);
+}
+.main {
+  width: 100vw;
+}
+.footer {
+  width: 100vw;
+  height: calc(var(--height-unit) * 10);
+  background-color: var(--second-bgc);
+}
