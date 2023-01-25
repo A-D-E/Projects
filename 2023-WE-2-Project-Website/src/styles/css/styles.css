@@ -1,0 +1,123 @@
+/* header */
+
+.head-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px var(--height-unit);
+}
+
+.logo-link > img {
+  max-width: calc(var(--height-unit) * 3);
+}
+
+.menu {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.menu-item {
+  padding: 5px;
+  margin: 5px;
+}
+.menu-item:last-child {
+  margin-right: 0;
+}
+.menu-item:first-child {
+  margin-left: 0;
+}
+
+.menu-item a,
+.menu-item span {
+  color: var(--second-color);
+}
+
+.menu-item a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.head-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head-actions > div {
+  margin-right: 5px;
+}
+
+.head-actions > div:last-child {
+  margin-right: 0px;
+}
+
+.lang-switcher {
+  padding: 0px 5px;
+  color: var(--second-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lang-switcher a {
+  color: var(--second-color);
+  text-decoration: none;
+}
+
+.v-divider {
+  font-size: 60%;
+  margin: 0px 10px;
+  color: gray;
+  font-weight: 400;
+}
+
+.cta-button {
+  background-color: var(--main-color);
+  color: var(--second-color);
+}
+
+/* hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: var(--wave-bg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.section-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--height-unit) 0px;
+}
+h1 {
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+}
+h1 span {
+  color: var(--main-color);
+}
+.subtitle {
+  font-size: 2rem;
+  color: var(--second-color);
+  text-align: center;
+  font-weight: 400;
+}
+.cta-dark-button {
+  background-color: var(--second-bgc);
+  color: var(--second-color);
+  border-color: var(--second-bgc);
+}
+.hero-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--height-unit) 0px;
+}

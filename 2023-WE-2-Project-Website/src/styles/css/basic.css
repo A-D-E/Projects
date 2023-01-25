@@ -16,10 +16,45 @@
 
   /* background image  */
 
-  --wave-bg: '../img/bg.svg';
+  --wave-bg: url('../../img/bg.svg');
 
   /* spaces */
 
   --main-space: 15px;
   --height-unit: 40px;
+}
+
+.flex-container {
+  min-width: 60%;
+}
+
+.button {
+  background-color: gray;
+  color: var(--second-bgc);
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: solid thin var(--main-color);
+  margin: 0px 10px;
+}
+
+@media screen and (min-width: 1281px) {
+  .flex-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .flex-container {
+    min-width: 741px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .flex-container {
+    min-width: 320px;
+    width: 100%;
+  }
 }

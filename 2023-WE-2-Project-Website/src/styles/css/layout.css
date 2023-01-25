@@ -1,28 +1,32 @@
 body {
   background-color: var(--bgc);
+  font-family: Gilroy, sans-serif;
 }
 
 .site-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: var(--bgc);
+  width: 100%;
+  flex-direction: column;
 }
 
-.container {
-  min-height: 80vh;
+section {
   display: flex;
-  flex-direction: column;
-  max-width: 80%;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .header {
   width: 100vw;
-  height: var(--height-unit);
+  min-height: calc(var(--height-unit) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main {
-  width: 100vw;
+  width: 100%;
 }
 .footer {
   width: 100vw;
