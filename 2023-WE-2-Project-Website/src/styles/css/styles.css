@@ -131,17 +131,32 @@ h1 span {
 
 .card {
   color: white;
-  max-width: calc(50% - (var(--height-unit) / 2));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   padding: var(--height-unit);
   background-color: var(--main-color);
   border-radius: var(--height-unit);
   margin-top: calc(var(--height-unit) / 2);
   margin-bottom: calc(var(--height-unit) / 2);
 }
-.card:nth-child(odd){
+/* .card:nth-child(odd){
   margin-right: calc(var(--height-unit) / 2);
 }
 .card:nth-child(even){
+  margin-left: calc(var(--height-unit) / 2);
+} */
+
+.card-block-left{
+  width: calc(50% - (var(--height-unit) / 2));
+  display: flex;
+  flex-direction: column;
+  margin-right: calc(var(--height-unit) / 2);
+}
+.card-block-right{
+  width: calc(50% - (var(--height-unit) / 2));
+  display: flex;
+  flex-direction: column;
   margin-left: calc(var(--height-unit) / 2);
 }
 
@@ -157,6 +172,10 @@ h1 span {
   justify-content: flex-end;
 }
 
-.card-2 {
-  
+.card-3 {
+  padding-top: 0%;
+  padding-bottom: 1rem;
+}
+.card-3 > .card-footer {
+  margin-top: -20px;
 }
