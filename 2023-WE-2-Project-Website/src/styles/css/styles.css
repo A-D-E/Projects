@@ -125,26 +125,52 @@ h1 span {
 /* cards */
 
 .card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: calc(var(--height-unit));
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+  "card-1 card-2"
+  "card-1 card-2"
+  "card-1 card-2"
+  "card-1 card-2"
+  "card-1 card-4"
+  "card-3 card-4"
+  "card-3 card-4"
+  "card-3 card-4"
+  "card-3 card-4"
+  "card-3 ."
+  ;
 }
 
 .card {
   color: white;
-  max-width: calc(50% - (var(--height-unit) / 2));
+  width: 100%;
+  /* max-width: calc(50% - (var(--height-unit) / 2)); */
   padding: var(--height-unit);
   background-color: var(--main-color);
   border-radius: var(--height-unit);
-  margin-top: calc(var(--height-unit) / 2);
-  margin-bottom: calc(var(--height-unit) / 2);
+  /* margin-top: calc(var(--height-unit) / 2);
+  margin-bottom: calc(var(--height-unit) / 2); */
 }
-.card:nth-child(odd){
+/* .card:nth-child(odd){
   margin-right: calc(var(--height-unit) / 2);
 }
 .card:nth-child(even){
   margin-left: calc(var(--height-unit) / 2);
+} */
+.card-1 {
+  grid-area: card-1;
 }
-
+.card-2 {
+  grid-area: card-2;
+}
+.card-3 {
+  grid-area: card-3;
+}
+.card-4 {
+  grid-area: card-4;
+}
 .card-header > h2, .card-header > h3 {
   margin: calc(var(--height-unit) / 2) 0px;
 }
