@@ -6,6 +6,9 @@
     url('../fonts/Gilroy-Bold.ttf') format('truetype');
 }
 
+img {
+  max-width: 100%;
+}
 :root {
   /* colors  */
 

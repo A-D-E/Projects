@@ -121,3 +121,42 @@ h1 span {
   justify-content: center;
   padding: var(--height-unit) 0px;
 }
+
+/* cards */
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  color: white;
+  max-width: calc(50% - (var(--height-unit) / 2));
+  padding: var(--height-unit);
+  background-color: var(--main-color);
+  border-radius: var(--height-unit);
+  margin-top: calc(var(--height-unit) / 2);
+  margin-bottom: calc(var(--height-unit) / 2);
+}
+.card:nth-child(odd){
+  margin-right: calc(var(--height-unit) / 2);
+}
+.card:nth-child(even){
+  margin-left: calc(var(--height-unit) / 2);
+}
+
+.card-header > h2, .card-header > h3 {
+  margin: calc(var(--height-unit) / 2) 0px;
+}
+
+.card-footer {
+  min-width: 100%;
+}
+.card-footer-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-2 {
+  
+}
