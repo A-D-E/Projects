@@ -1,0 +1,26 @@
+.card{
+
+  &-wrap{
+
+  }
+  &-item{
+
+    &__1{
+      
+    }
+  }
+  &-header{
+    @media (min-width: 768px){
+  
+    }
+  }
+  &-footer{
+
+  }
+  &:hover{
+   
+  }
+@media (min-width: 768px){
+  display: flex;
+}
+}
