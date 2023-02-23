@@ -1,16 +1,16 @@
 import "./style.css"
-const input = document.querySelectorAll('input')
-const summe = document.querySelector('#summe')
-const btn = document.querySelector('.button')
-btn.addEventListener('click', function(e){
-  const green = "green"
+
+const input1 = document.querySelector('#text-input1')
+const input2 = document.querySelector('#text-input2')
+const btn = document.querySelector('button')
+const displaySumme = document.querySelector('#summe')
+
+btn.onclick = function () {
   
-  summe.style.backgroundColor === "green"
-  ? summe.style.backgroundColor = "red"
-  : summe.style.backgroundColor = "green"
-})
+  displaySumme.innerHTML = +input1.value + +input2.value
 
-
-
-
-
+  if (input1.value || input2.value) {
+    input1.value = ''
+    input2.value = ''
+  }
+}
