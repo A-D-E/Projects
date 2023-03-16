@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e9e9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.buttons {
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: cornflowerblue;
+  border: solid thin hsl(210, 94%, 61%);
+  border-radius: 3px;
+  color: #e9e9e9;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.wrap {
+  width: 50%;
+  height: 50%;
+  border-radius: 10px;
+  border: solid thin lightslategray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.wrap > div {
+  flex-basis: 25%;
+  min-height: 50%;
+  transition: all .3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.wrap > div:first-child {
+  border-top-left-radius: 10px;
+}
+
+.wrap > div:nth-child(4) {
+  border-top-right-radius: 10px;
+}
+
+.wrap > div:nth-child(5) {
+  border-bottom-left-radius: 10px;
+}
+
+.wrap > div:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.green{
+  background-color: green;
+}
+.gray{
+  background-color: gray;
+}
+.blue{
+  background-color: blue;
+}
+.red{
+  background-color: red;
+}
+.square{
+  
+}
+.round{
+  
+}
+
+.display {
+  margin-top: 20px;
+  width: 50%;
+  background-color: #6494ed4f;
+  border: solid thin hsl(210, 94%, 61%);
+  border-radius: 3px;
+  min-height: 50px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  line-height: 24px;
+  text-align: left;
+}
+
+#pre {
+  margin-top: 10px;
+  width: 50%;
+  font-size: 20px;
+}

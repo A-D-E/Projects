@@ -1,0 +1,105 @@
+@mixin flex($justify, $align){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin full {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  @include flex(center, center);
+  background-color: beige;
+}
+
+.html {
+  width: 75%;
+  height: 50%;
+  border: solid thin #516b85c5;
+  border-radius: 5px;
+  box-shadow: 6px 7px 14px 7px rgba(74, 79, 84, 0.35);
+}
+
+.window, .document{
+  @include full;
+  border-radius: 5px;
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+  background-color: aliceblue;
+}
+.header {
+  display: flex;
+  justify-content: flex-end;
+  &__button-area {
+    padding-right: 10px;
+  }
+  &__btn {
+    text-align: center;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    &:first-child {
+      margin-left: 0;
+      background-color: chartreuse;
+      &:hover{
+        background-color: darken(chartreuse, 10);
+      }
+    }
+    &:nth-child(2){
+      background-color: yellow;
+      &:hover{
+        background-color: darken(yellow, 10);
+      }
+    }
+    &:nth-child(3){
+      background-color: red;
+      &:hover{
+        background-color: darken(red, 10);
+      }
+    }
+  }
+}
+.view {
+  flex: 1;
+}
+.header, .footer {
+  height: 25px;
+}
+
+.footer{
+  transition: all .3s ease-in-out;
+  @include flex(space-between, center);
+  &__mouse-viewer, &__the-date{
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  &__the-date {
+    padding-left: 10px;
+  }
+}
