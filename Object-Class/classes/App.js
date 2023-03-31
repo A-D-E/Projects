@@ -33,14 +33,15 @@ class App {
     this.document.appendChild(this.view)
     this.settings.showFooter && this.document.appendChild(this.footer)
     this.header.appendChild(this.buttonArea)
-    this.document.style.backgroundColor = this.settings.backgroundColor
+    this.document.style.backgroundColor = this.settings.documentBg ? this.settings.documentBg : 'beige'
   }
 
   // parse header buttons
+  
 
   parseBtns(){
     const arr = this.settings.buttonsClasses
-    console.log(this.settings)
+    
     arr.map((_, i) => {
       const symbols = this.settings.buttonsSymbols
       const button = document.createElement('button')

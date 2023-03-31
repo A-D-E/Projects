@@ -23,7 +23,8 @@ const browserSettings = {
   viewBg: 'lightblue',
   showFooter: true,
   daylyInfo: true,
-  showMouseData: false
+  showMouseData: false,
+  query: 'slider'
 }
 
 const browserApp = new Browser(browserSettings)
