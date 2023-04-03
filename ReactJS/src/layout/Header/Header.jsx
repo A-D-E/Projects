@@ -1,8 +1,11 @@
 import styles from './Header.module.scss'
 
 function Header() {
+
   return (
-    <div className={styles.Header}>Header</div>
+    <div className={styles.Header}>
+      <p>Header</p>
+    </div>
   )
 }
 
