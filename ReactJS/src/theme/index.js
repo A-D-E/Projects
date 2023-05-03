@@ -10,5 +10,5 @@ export const theme = {
     secondary: '#757575',
     textColor: '#BDBDBD',
     backgroundColor: '#212121',
-  }
+  },
 }

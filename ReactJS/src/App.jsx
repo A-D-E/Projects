@@ -2,20 +2,41 @@ import './App.scss'
 import Header from 'layout/Header'
 import Content from 'layout/Content'
 import Footer from 'layout/Footer'
-import ThemeContextProvider from 'context/ThemeContext'
-
-import { theme } from 'theme'
+import ThemeContext from 'context/ThemeContext'
+import { useContext, useEffect } from 'react'
 
 function App() {
-  console.log(theme)
+
+  const { currentTheme, isDarkMode, toggleTheme } = useContext(ThemeContext)
+
+  const appStlye = {
+    backgroundColor: currentTheme.primary,
+    color: currentTheme.color
+  }
+
+  const time = new Date().getHours()
+
+  useEffect(() => {
+
+    if (time >= 19 || time <= 6) {
+      document.querySelector('html').setAttribute('data-theme', 'dark')
+      localStorage.setItem('theme', 'dark')
+      if (!isDarkMode) toggleTheme()
+    } else {
+      document.querySelector('html').setAttribute('data-theme', 'light')
+      localStorage.setItem('theme', 'light')
+      if (isDarkMode) toggleTheme()
+    }
+
+  }, [isDarkMode, time])
+
   return (
-    <ThemeContextProvider>
-      <div className="App">
-        <Header />
-        <Content />
-        <Footer />
-      </div>
-    </ThemeContextProvider>
+
+    <div className="App" style={appStlye}>
+      <Header />
+      <Content />
+      <Footer />
+    </div>
   )
 }
 
