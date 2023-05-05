@@ -1,27 +1,6 @@
 import { useState } from 'react'
 import style from './Slider.module.scss'
-
-const sliderStyles = {
-
-}
-
-const slides = [
-  {
-    title: 'Slide 1',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    img: 'https://picsum.photos/200/300'
-  },
-  {
-    title: 'Slide 2',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    img: 'https://picsum.photos/200/300'
-  },
-  {
-    title: 'Slide 3',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-    img: 'https://picsum.photos/200/300'
-  }
-]
+import slides from 'utils/slides'
 
 function Slider() {
   const [current, setCurrent] = useState(0)
