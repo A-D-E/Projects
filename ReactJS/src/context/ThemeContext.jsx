@@ -12,37 +12,24 @@ const time = new Date().getHours()
 
 export const ThemeContextProvider = ({ children }) => {
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem('theme') === 'dark'
-  )
+  const [isDarkMode, setIsDarkMode] = useState(false)
   const [currentTheme, setCurrentTheme] = useState(theme.light)
   const [autoThemeMode, setAutoThemeMode] = useState(false)
   const [isEvening, setIsEvening] = useState(false)
 
   useEffect(() => {
-    const htmlElement = document.querySelector('html')
 
-    function setThemeModeToDark() {
-      htmlElement.setAttribute('data-theme', 'dark')
-      localStorage.setItem('theme', 'dark')
-      setCurrentTheme(theme.dark)
-    }
-    function setThemeModeToLight() {
-      htmlElement.setAttribute('data-theme', 'light')
-      localStorage.setItem('theme', 'light')
-      setCurrentTheme(theme.light)
-    }
+    time >= 18 || time <= 6 ? setIsEvening(true) : setIsEvening(false)
 
-    isDarkMode ? setThemeModeToDark() : setThemeModeToLight()
+    isDarkMode ? setCurrentTheme(theme.dark) : setCurrentTheme(theme.light)
 
-    isEvening && autoThemeMode && setThemeModeToDark()
+    isEvening && autoThemeMode ? setCurrentTheme(theme.dark) : setCurrentTheme(theme.light)
 
   }, [isDarkMode, autoThemeMode, isEvening])
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode)
   }
-
 
   return (
     <ThemeContext.Provider value={{

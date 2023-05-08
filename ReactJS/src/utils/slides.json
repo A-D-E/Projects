@@ -7,11 +7,11 @@
   {
     "title": "Slide 2",
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    "img": "https://picsum.photos/200/300"
+    "img": "https://picsum.photos/200"
   },
   {
     "title": "Slide 3",
     "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    "img": "https://picsum.photos/200/300"
+    "img": "https://picsum.photos/300"
   }
 ]
