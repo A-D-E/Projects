@@ -4,8 +4,11 @@ import { theme } from "theme"
 const ThemeContext = createContext({
   isDarkMode: false,
   toggleTheme: () => { },
-  currentTheme: theme.light
+  currentTheme: theme.light,
+  autoThemeMode: false,
+  setAutoThemeMode: () => { }
 })
+const time = new Date().getHours()
 
 export const ThemeContextProvider = ({ children }) => {
 
@@ -13,20 +16,28 @@ export const ThemeContextProvider = ({ children }) => {
     localStorage.getItem('theme') === 'dark'
   )
   const [currentTheme, setCurrentTheme] = useState(theme.light)
+  const [autoThemeMode, setAutoThemeMode] = useState(false)
+  const [isEvening, setIsEvening] = useState(false)
 
   useEffect(() => {
     const htmlElement = document.querySelector('html')
-    if (isDarkMode) {
+
+    function setThemeModeToDark() {
       htmlElement.setAttribute('data-theme', 'dark')
       localStorage.setItem('theme', 'dark')
       setCurrentTheme(theme.dark)
-    } else {
+    }
+    function setThemeModeToLight() {
       htmlElement.setAttribute('data-theme', 'light')
       localStorage.setItem('theme', 'light')
       setCurrentTheme(theme.light)
     }
 
-  }, [isDarkMode])
+    isDarkMode ? setThemeModeToDark() : setThemeModeToLight()
+
+    isEvening && autoThemeMode && setThemeModeToDark()
+
+  }, [isDarkMode, autoThemeMode, isEvening])
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode)
@@ -37,7 +48,9 @@ export const ThemeContextProvider = ({ children }) => {
     <ThemeContext.Provider value={{
       isDarkMode,
       toggleTheme,
-      currentTheme
+      currentTheme,
+      autoThemeMode,
+      setAutoThemeMode
     }}>
       {children}
     </ThemeContext.Provider>

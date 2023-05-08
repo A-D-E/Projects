@@ -14,7 +14,6 @@ function App() {
     color: currentTheme.color
   }
 
-  const time = new Date().getHours()
 
 
   useEffect(() => {
