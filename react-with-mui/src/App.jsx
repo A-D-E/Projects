@@ -1,6 +1,4 @@
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
+import { CssBaseline, Typography, Container } from '@material-ui/core'
 import Header from './components/Header'
 
 export default function App() {
