@@ -4,10 +4,11 @@ import {
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import MailIcon from '@material-ui/icons/Mail'
 import NotificationsIcon from '@material-ui/icons/Notifications'
+import Brightness4Icon from '@material-ui/icons/Brightness4'
 
 export default function NavigationMenu({ anchorEl,
   mobileMoreAnchorEl, handleMobileMenuClose, menuId,
-  mobileMenuId, handleMenuClose, handleProfileMenuOpen }) {
+  mobileMenuId, handleMenuClose, handleProfileMenuOpen, darkMode, setDarkMode }) {
 
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
@@ -24,6 +25,11 @@ export default function NavigationMenu({ anchorEl,
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem>
+        <IconButton onClick={() => setDarkMode(!darkMode)}>
+          <Brightness4Icon />
+        </IconButton>
+      </MenuItem>
     </Menu>
   )
 
@@ -63,6 +69,11 @@ export default function NavigationMenu({ anchorEl,
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton onClick={() => setDarkMode(!darkMode)}>
+          <Brightness4Icon />
+        </IconButton>
       </MenuItem>
     </Menu>
   )

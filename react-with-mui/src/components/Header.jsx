@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Header() {
+export default function Header({ darkMode, setDarkMode }) {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null)
@@ -150,7 +150,8 @@ export default function Header() {
         </Toolbar>
       </AppBar>
       <NavigationMenu anchorEl={anchorEl} mobileMoreAnchorEl={mobileMoreAnchorEl} handleMobileMenuClose={handleMobileMenuClose} menuId={menuId}
-        mobileMenuId={mobileMenuId} handleMenuClose={handleMenuClose} handleProfileMenuOpen={handleProfileMenuOpen} />
+        mobileMenuId={mobileMenuId} handleMenuClose={handleMenuClose} handleProfileMenuOpen={handleProfileMenuOpen}
+        darkMode={darkMode} setDarkMode={setDarkMode} />
     </div>
   )
 }
